@@ -32,7 +32,7 @@ pipeline {
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "1819242/jenkins:${BUILD_NUMBER}"
-        // DOCKERFILE_LOCATION = "Jenkins/ATS-Server/Dockerfile"
+        // DOCKERFILE_LOCATION = "Jenkins/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
       steps {
@@ -67,4 +67,3 @@ pipeline {
   }
 }
 }
-#########################################
