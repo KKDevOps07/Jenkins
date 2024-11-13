@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Eureka-server
+  labels:
+    app: Eureka-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: Eureka-server
+  template:
+    metadata:
+      labels:
+        app: Eureka-server
+    spec:
+      containers:
+      - name: Eureka-server
+        image: 1819242/Jenkins:replaceImageTag
+        ports:
+        - containerPort: 80
