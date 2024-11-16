@@ -10,6 +10,9 @@ pipeline {
       steps {
         // Perform Git checkout
         git branch: 'master', url: 'https://github.com/KKDevOps07/Jenkins/'
+        sh 'git reset --hard HEAD'   // Reset to the latest commit to ensure a clean state
+        sh 'git clean -fdx'          // Remove untracked files and directories
+        checkout scm
         // Debug: Ensure ATS-Server directory exists
         sh 'ls -R'
       }
