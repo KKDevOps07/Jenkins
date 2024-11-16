@@ -25,7 +25,7 @@ pipeline {
         SONAR_URL = "http://35.95.146.255:9000/" 
       }
       steps {
-        withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
+        withCredentials([string(credentialsId: 'Sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
           sh '''
           cd ATS-Server
           mvn sonar:sonar \
@@ -59,7 +59,7 @@ pipeline {
         GIT_USER_NAME = "KKDevOps7"
       }
       steps {
-        withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+        withCredentials([string(credentialsId: 'Github', variable: 'GITHUB_TOKEN')]) {
           sh '''
           cd ATS-Server
           git config user.email "kirangoud983@gmail.com"
