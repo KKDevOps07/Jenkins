@@ -25,7 +25,7 @@ pipeline {
         SONAR_URL = "http://52.26.159.252:9000/" 
       }
       steps {
-        withCredentials([string(credentialsId: 'Sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
+        withCredentials([string(credentialsId: 'kiran', variable: 'SONAR_AUTH_TOKEN')]) {
           sh '''
           cd ATS-Server
           mvn sonar:sonar \
