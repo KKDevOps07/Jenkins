@@ -43,7 +43,6 @@ pipeline {
       steps {
         script {
           sh '''
-          cd ATS-Server
           docker build -t ${DOCKER_IMAGE} .
           '''
           def dockerImage = docker.image("${DOCKER_IMAGE}")
@@ -61,7 +60,6 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'Github', variable: 'GITHUB_TOKEN')]) {
           sh '''
-          cd ATS-Server
           git config user.email "kirangoud983@gmail.com"
           git config user.name "Kiran Kakara"
           sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" deploy.yml
